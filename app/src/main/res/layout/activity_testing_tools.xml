@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Блок для Espresso -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Espresso" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Espresso — это фреймворк для автоматизации тестирования пользовательских интерфейсов на Android. Он позволяет разработчикам писать тесты, которые взаимодействуют с приложением на уровне UI-компонентов, таких как кнопки, поля ввода и списки. Основные преимущества Espresso включают простоту использования, высокую скорость выполнения тестов и возможность написания тестов непосредственно на языке разработки приложения." />
+
+        <Button
+            android:id="@+id/buttonEspressoDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Подробнее" />
+
+        <!-- Блок для UI Automator -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="UI Automator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="UI Automator — это инструмент для тестирования пользовательских интерфейсов на Android, который позволяет тестировать взаимодействие между несколькими приложениями и системными компонентами устройства. Этот инструмент подходит для сложных сценариев тестирования, когда необходимо проверять функциональность, выходящую за рамки одного приложения. UI Automator поддерживает тестирование на разных уровнях системы, включая запуск приложений, переходы между ними и взаимодействие с системными настройками." />
+
+        <Button
+            android:id="@+id/buttonUiAutomatorDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Подробнее" />
+
+        <!-- Блок для Robotium -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Robotium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Robotium — это библиотека для автоматизации тестирования Android-приложений, которая упрощает создание функциональных и системных тестов. Она позволяет тестировать как отдельные компоненты приложения, так и интеграционные аспекты. Основные преимущества Robotium включают:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="• Поддержка тестирования нескольких видов активности одновременно.\n\n• Упрощённое написание тестов благодаря использованию простых методов.\n\n• Совместимость с большинством популярных фреймворков для тестирования, таких как JUnit и TestNG.\n\n• Поддержка как функционального, так и системного тестирования." />
+
+        <Button
+            android:id="@+id/buttonRobotiumDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Подробнее" />
+
+        <!-- Новый блок для Kaspresso -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Kaspresso" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kaspresso — это современный фреймворк для тестирования Android-приложений, созданный компанией JetBrains. Он построен поверх Espresso и предлагает улучшенную читаемость и удобство использования. Основные преимущества Kaspresso включают:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="• Более понятный синтаксис и удобная DSL-система для написания тестов.\n\n• Поддержка различных типов тестов, включая UI-тестирование, интеграционное тестирование и юнит-тестирование.\n\n• Автоматическая обработка асинхронных операций, что делает тестирование проще и надежнее.\n\n• Глубокая интеграция с IDE от JetBrains, что обеспечивает отличную поддержку автодополнения и анализа кода." />
+
+        <Button
+            android:id="@+id/buttonKaspressoDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Подробнее" />
+
+        <!-- Новый блок для Appium -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Appium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Appium — это кросс-платформенный фреймворк для автоматизации мобильных приложений. Он поддерживает тестирование на iOS, Android и Windows, используя единый API. Основные преимущества Appium включают:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="• Кросс-платформенность: поддержка тестирования на различных операционных системах.\n\n• Использование единого API для тестирования на разных платформах.\n\n• Поддержка различных языков программирования, таких как Java, Python, Ruby и C#.\n\n• Открытый исходный код и активное сообщество разработчиков." />
+
+        <Button
+            android:id="@+id/buttonAppiumDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Подробнее" />
+
+        <!-- Добавляйте блоки для других инструментов -->
+    </LinearLayout>
+</ScrollView>

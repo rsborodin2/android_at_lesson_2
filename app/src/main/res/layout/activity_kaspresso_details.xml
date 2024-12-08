@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Kaspresso" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kaspresso — это современный фреймворк для тестирования Android-приложений, созданный компанией JetBrains. Он построен поверх Espresso и предлагает улучшенную читаемость и удобство использования. Основные преимущества Kaspresso включают:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="• Более понятный синтаксис и удобная DSL-система для написания тестов.\n\n• Поддержка различных типов тестов, включая UI-тестирование, интеграционное тестирование и юнит-тестирование.\n\n• Автоматическая обработка асинхронных операций, что делает тестирование проще и надежнее.\n\n• Глубокая интеграция с IDE от JetBrains, что обеспечивает отличную поддержку автодополнения и анализа кода." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Недостатком Kaspresso является его зависимость от Espresso, что требует установки и настройки обоих фреймворков." />
+    </LinearLayout>
+</ScrollView>

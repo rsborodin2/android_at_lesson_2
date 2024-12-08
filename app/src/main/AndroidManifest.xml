@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ru.bellintegrator.android_at_lesson_2"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Android_at_lesson_2"
+        tools:targetApi="31"
+        android:icon="@mipmap/ic_launcher_round">
+        <!-- Регистрация BroadcastReceiver -->
+
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Android_at_lesson_2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AppiumDetailsActivity"/>
+        <activity android:name=".activity.KaspressoDetailsActivity"/>
+        <activity android:name=".activity.EspressoDetailsActivity"/>
+        <activity android:name=".activity.UiElementsActivity"/>
+        <activity android:name=".activity.TestingToolsActivity"/>
+        <activity android:name=".activity.ScreenSettingsActivity"/>
+        <activity android:name=".activity.CurrencyActivity"/>
+        <activity android:name=".activity.TaskActivity" />
+        <activity android:name=".activity.EventDetailsActivity"/>
+        <!-- Регистрация BroadcastReceiver -->
+        <receiver
+            android:name=".CustomEventReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ru.bellintegrator.android_at_lesson_2.CUSTOM_EVENT" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".service.MyBackgroundService"
+            android:exported="false"/>
+    </application>
+
+</manifest>
