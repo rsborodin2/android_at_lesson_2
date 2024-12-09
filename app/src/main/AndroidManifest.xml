@@ -5,6 +5,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,12 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_at_lesson_2"
         tools:targetApi="31"
+
         android:icon="@mipmap/ic_launcher_round">
         <!-- Регистрация BroadcastReceiver -->
 
 
         <activity
             android:name=".activity.MainActivity"
+            android:screenOrientation="fullSensor"
             android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Android_at_lesson_2">
@@ -28,18 +33,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AppiumDetailsActivity"/>
-        <activity android:name=".activity.KaspressoDetailsActivity"/>
-        <activity android:name=".activity.EspressoDetailsActivity"/>
-        <activity android:name=".activity.UiElementsActivity"/>
-        <activity android:name=".activity.TestingToolsActivity"/>
-        <activity android:name=".activity.ScreenSettingsActivity"/>
-        <activity android:name=".activity.CurrencyActivity"/>
-        <activity android:name=".activity.TaskActivity" />
-        <activity android:name=".activity.EventDetailsActivity"/>
+        <activity android:name=".activity.AppiumDetailsActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.KaspressoDetailsActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.EspressoDetailsActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.UiElementsActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.TestingToolsActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.ScreenSettingsActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.CurrencyActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.TaskActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.EventDetailsActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.ComplexActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.LifeCycleActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.DeepLinkActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <!-- Настройка deep link -->
+                <data
+                    android:scheme="deeplinkexample"
+                    android:host="deeplinkactivity"
+                    android:pathPrefix="/open"/>
+            </intent-filter>
+        </activity>
         <!-- Регистрация BroadcastReceiver -->
         <receiver
-            android:name=".CustomEventReceiver"
+            android:name=".broadcastReceiver.CustomEventReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="ru.bellintegrator.android_at_lesson_2.CUSTOM_EVENT" />
@@ -48,6 +81,10 @@
         <service
             android:name=".service.MyBackgroundService"
             android:exported="false"/>
+        <service
+            android:name=".service.ForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync"/>
     </application>
 
 </manifest>

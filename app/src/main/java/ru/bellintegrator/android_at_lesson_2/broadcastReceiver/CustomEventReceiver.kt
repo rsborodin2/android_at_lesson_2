@@ -1,4 +1,4 @@
-package ru.bellintegrator.android_at_lesson_2
+package ru.bellintegrator.android_at_lesson_2.broadcastReceiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
