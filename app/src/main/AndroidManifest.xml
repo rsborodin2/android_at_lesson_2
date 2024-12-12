@@ -80,10 +80,10 @@
         </receiver>
         <service
             android:name=".service.MyBackgroundService"
-            android:exported="false"/>
+            android:exported="true"/>
         <service
             android:name=".service.ForegroundService"
-            android:exported="false"
+            android:exported="true"
             android:foregroundServiceType="dataSync"/>
     </application>
 
