@@ -36,7 +36,9 @@
         <activity android:name=".activity.AppiumDetailsActivity"
             android:screenOrientation="fullSensor"/>
         <activity android:name=".activity.KaspressoDetailsActivity"
-            android:screenOrientation="fullSensor"/>
+            android:screenOrientation="fullSensor"
+            android:exported="true"
+            />
         <activity android:name=".activity.EspressoDetailsActivity"
             android:screenOrientation="fullSensor"/>
         <activity android:name=".activity.UiElementsActivity"

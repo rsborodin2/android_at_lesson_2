@@ -7,10 +7,11 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Handler
 import android.os.IBinder
 import android.util.Log
+import android.widget.Toast
 import androidx.core.app.NotificationCompat
-import ru.bellintegrator.android_at_lesson_2.R
 import ru.bellintegrator.android_at_lesson_2.activity.MainActivity
 
 class ForegroundService : Service() {
@@ -18,9 +19,14 @@ class ForegroundService : Service() {
         const val CHANNEL_ID = "ForegroundServiceChannel"
     }
 
+    private lateinit var handler: Handler
+
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
+        handler = Handler(mainLooper)
+
+        showToast("Сервис создан")
     }
 
     private fun createNotificationChannel() {
@@ -55,11 +61,13 @@ class ForegroundService : Service() {
             NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Foreground Service")
                 .setContentText(input)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+//                .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentIntent(pendingIntent)
                 .build()
 
         startForeground(1, notification)
+
+        showToast("Команда запущена")
 
         // Do some work in the background
         Thread {
@@ -73,7 +81,18 @@ class ForegroundService : Service() {
         return START_NOT_STICKY
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        showToast("Сервис остановлен")
+    }
+
     override fun onBind(intent: Intent?): IBinder? {
         return null
+    }
+
+    private fun showToast(message: String) {
+        handler.post {
+            Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+        }
     }
 }

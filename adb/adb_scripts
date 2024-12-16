@@ -1,0 +1,26 @@
+adb shell am broadcast -a ru.bellintegrator.android_at_lesson_2.CUSTOM_EVENT --es event_data "SHOW_TOAST"
+
+adb shell am broadcast -a ru.bellintegrator.android_at_lesson_2.CUSTOM_EVENT --es event_data "OPEN_ACTIVITY"
+
+adb shell settings get system screen_brightness
+
+adb shell content query --uri content://contacts/phones/
+
+# открытие диплинка
+adb shell am start -a android.intent.action.VIEW -d "deeplinkexample://deeplinkactivity/open"
+
+# открытие активити
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.MainActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.AppiumDetailsActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.KaspressoDetailsActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.EspressoDetailsActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.UiElementsActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.TestingToolsActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.ScreenSettingsActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.CurrencyActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.TaskActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.EventDetailsActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.ComplexActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.LifeCycleActivity
+adb shell am start -n ru.bellintegrator.android_at_lesson_2/.activity.DeepLinkActivity
+

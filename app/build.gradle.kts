@@ -2,6 +2,11 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("kotlin-android")
+    // id("AllurePlugin")
+    id("io.qameta.allure") version "2.9.6"
+
+    // /data/data/ru.bellintegrator.android_at_lesson_2/files/allure-results
 }
 
 android {
@@ -15,12 +20,11 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -47,6 +51,12 @@ android {
     }
 }
 
+allure {
+    report {
+        version.set("2.19.0")
+    }
+}
+
 dependencies {
     // Компиляция Kotlin
     // implementation(libs.kotlin.stdlib)
@@ -62,6 +72,18 @@ dependencies {
 
     // Конвертер Gson для преобразования JSON в объекты Java
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("androidx.test.uiautomator:uiautomator-v18:2.2.0-alpha1")
+    // to show allure results in android studio
+    androidTestImplementation("com.android.support.test:runner:1.0.2")
+    androidTestImplementation("com.android.support.test:rules:1.0.2")
+    androidTestImplementation("com.android.support.test.uiautomator:uiautomator-v18:2.1.3")
+    androidTestImplementation("com.android.support:support-annotations:28.0.0")
+
+    // Allure
+    androidTestImplementation("io.qameta.allure:allure-kotlin-model:2.4.0")
+    androidTestImplementation("io.qameta.allure:allure-kotlin-commons:2.4.0")
+    androidTestImplementation("io.qameta.allure:allure-kotlin-junit4:2.4.0")
+    androidTestImplementation("io.qameta.allure:allure-kotlin-android:2.4.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
