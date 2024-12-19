@@ -1,4 +1,4 @@
-package ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages
+package ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.android_at_lesson
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -15,13 +15,5 @@ class SettingsPage {
 
     fun verifyBrightnessValue(expectedValue: String) {
         onView(withId(R.id.brightness_value)).check(matches(allOf(isDisplayed(), withText(expectedValue))))
-    }
-
-    fun verifyTimeoutLabel() {
-        onView(withId(R.id.timeout_label)).check(matches(allOf(isDisplayed(), withText("Screen Timeout:"))))
-    }
-
-    fun verifyTimeoutValue(expectedValue: String) {
-        onView(withId(R.id.timeout_value)).check(matches(allOf(isDisplayed(), withText(expectedValue))))
     }
 }

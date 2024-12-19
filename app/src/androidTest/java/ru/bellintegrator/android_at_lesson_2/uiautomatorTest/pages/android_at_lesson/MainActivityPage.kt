@@ -1,4 +1,4 @@
-package ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages
+package ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.android_at_lesson
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click

@@ -73,6 +73,7 @@ dependencies {
     // Конвертер Gson для преобразования JSON в объекты Java
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.test.uiautomator:uiautomator-v18:2.2.0-alpha1")
+    implementation("androidx.test.espresso:espresso-contrib:3.6.1")
     // to show allure results in android studio
     androidTestImplementation("com.android.support.test:runner:1.0.2")
     androidTestImplementation("com.android.support.test:rules:1.0.2")

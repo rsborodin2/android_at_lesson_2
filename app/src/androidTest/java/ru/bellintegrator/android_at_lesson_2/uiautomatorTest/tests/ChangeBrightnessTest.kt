@@ -9,8 +9,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import ru.bellintegrator.android_at_lesson_2.activity.MainActivity
-import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.MainActivityPage
-import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.SettingsPage
+import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.android_at_lesson.MainActivityPage
+import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.android_at_lesson.SettingsPage
 import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.system.BrightnessPage
 
 @RunWith(AndroidJUnit4::class)
@@ -20,7 +20,7 @@ class ChangeBrightnessTest : BaseTest() {
 
     @Test
     @Description("Изменение уровня яркости экрана")
-    fun changeBrightness() {
+    fun changeBrightnessTest() {
         step("Запустить активность настроек дисплея") {
             openActivity(context, Settings.ACTION_DISPLAY_SETTINGS)
         }
@@ -39,11 +39,11 @@ class ChangeBrightnessTest : BaseTest() {
             with(MainActivityPage()) {
                 waitForLoaded()
                 openScreenSettingsActivity()
-                SettingsPage().verifyBrightnessLabel()
             }
-            step("Сравнить новое значение яркости") {
-                SettingsPage().verifyBrightnessValue(brightnessPosition)
-            }
+            SettingsPage().verifyBrightnessLabel()
+        }
+        step("Проверить новое значение яркости") {
+            SettingsPage().verifyBrightnessValue(brightnessPosition)
         }
     }
 }

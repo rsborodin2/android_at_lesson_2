@@ -8,7 +8,7 @@ import androidx.test.uiautomator.UiDevice
 import org.junit.After
 import org.junit.Before
 import org.junit.runner.RunWith
-import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.MainActivityPage
+import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.android_at_lesson.MainActivityPage
 
 @RunWith(AndroidJUnit4::class)
 open class BaseTest {

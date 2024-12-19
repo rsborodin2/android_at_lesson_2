@@ -57,6 +57,9 @@
             android:screenOrientation="fullSensor"/>
         <activity android:name=".activity.LifeCycleActivity"
             android:screenOrientation="fullSensor"/>
+        <activity android:name=".activity.KotlinFeaturesActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor"/>
         <activity android:name=".activity.DeepLinkActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">

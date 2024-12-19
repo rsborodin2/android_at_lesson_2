@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val cardForegroundService = findViewById<CardView>(R.id.cardForegroundService)
         val cardOpenDeepLink = findViewById<CardView>(R.id.cardOpenDeeplink)
         val cardLifeCycle = findViewById<CardView>(R.id.cardLifeCycle)
-
+        val cardKotlinFeature = findViewById<CardView>(R.id.cardKotlinFeatures)
         cardUiElements.setOnClickListener {
             startActivity(Intent(this, UiElementsActivity::class.java))
         }
@@ -67,6 +67,10 @@ class MainActivity : AppCompatActivity() {
 
         cardLifeCycle.setOnClickListener {
             startActivity(Intent(this, LifeCycleActivity::class.java))
+        }
+
+        cardKotlinFeature.setOnClickListener {
+            startActivity(Intent(this, KotlinFeaturesActivity::class.java))
         }
 
         cardOpenDeepLink.setOnClickListener {

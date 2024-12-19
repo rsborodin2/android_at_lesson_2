@@ -10,13 +10,6 @@ import java.io.ByteArrayOutputStream
 import java.util.regex.Pattern
 
 object DeviceUtil {
-    private const val DEFAULT_ANIMATION_VALUE = 1.0f
-
-    enum class Diagonal(val inch: Int) {
-        FHD(32),
-        UHD(43),
-    }
-
     val device: UiDevice
         get() = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
 
@@ -33,14 +26,6 @@ object DeviceUtil {
 
     fun changeAnimationValue(value: Float) {
         device.executeShellCommand("settings put global animator_duration_scale $value")
-    }
-
-    fun getAnimationValue(): Float {
-        return try {
-            device.executeShellCommand("settings get global animator_duration_scale").toFloat()
-        } catch (e: NumberFormatException) {
-            return DEFAULT_ANIMATION_VALUE
-        }
     }
 
     fun getDumpString(): String {

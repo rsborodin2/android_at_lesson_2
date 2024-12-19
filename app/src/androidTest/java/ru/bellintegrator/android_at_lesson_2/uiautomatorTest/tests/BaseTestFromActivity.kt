@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.UiDevice
 import org.junit.Before
-import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.MainActivityPage
+import ru.bellintegrator.android_at_lesson_2.uiautomatorTest.pages.android_at_lesson.MainActivityPage
 
 open class BaseTestFromActivity : BaseTest() {
     @Before
