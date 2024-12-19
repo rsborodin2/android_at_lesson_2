@@ -1,6 +1,7 @@
 package ru.bellintegrator.android_at_lesson_2.uiautomatorTest.tests
 
 import android.content.Context
+import android.content.Intent
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.UiDevice
@@ -18,7 +19,7 @@ open class BaseTest {
     @Before
     open fun setup() {
         device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
-        mainActivityPage = MainActivityPage(device)
+        mainActivityPage = MainActivityPage()
 
         // Получаем контекст приложения
         context = InstrumentationRegistry.getInstrumentation().targetContext
@@ -28,5 +29,25 @@ open class BaseTest {
     fun tearDown() {
         device.pressBack()
         device.pressHome()
+    }
+
+    fun openActivity(
+        context: Context,
+        action: String,
+    ) {
+        val intent = Intent(action)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        context.startActivity(intent)
+    }
+
+    fun openActivity(
+        context: Context,
+        action: String,
+        clazz: Class<*>,
+    ) {
+        val intent = Intent(action)
+        intent.setClassName(context, clazz.canonicalName) // Установите класс активности
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        context.startActivity(intent)
     }
 }

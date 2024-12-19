@@ -57,7 +57,7 @@ class CurrencyActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         // Извлекаем ответ и получаем курс рубля
                         val currencyResponse = response.body()
-                        val rubRate = currencyResponse?.rates?.get("RUB") ?: 0.0
+                        val rubRate = currencyResponse?.rates?.get("RUB")
                         val result = "Курс рубля к доллару: %.2f".format(rubRate)
                         textViewResult.text = result
                     } else {
