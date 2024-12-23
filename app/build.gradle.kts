@@ -20,7 +20,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
+        testInstrumentationRunner = "com.kaspersky.kaspresso.runner.KaspressoRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -38,11 +38,12 @@ android {
         dataBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     packaging {
         resources {
@@ -74,6 +75,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.test.uiautomator:uiautomator-v18:2.2.0-alpha1")
     implementation("androidx.test.espresso:espresso-contrib:3.6.1")
+    implementation("androidx.test.ext:junit-ktx:1.2.1")
     // to show allure results in android studio
     androidTestImplementation("com.android.support.test:runner:1.0.2")
     androidTestImplementation("com.android.support.test:rules:1.0.2")
@@ -95,4 +97,8 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
+
+    // Kaspresso
+    androidTestImplementation ("com.kaspersky.android-components:kaspresso:1.5.5")
+    androidTestUtil("androidx.test:orchestrator:1.4.2")
 }
